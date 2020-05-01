@@ -9,15 +9,15 @@ func main() {
 }
 
 func upTripRoute() {
-	http.Handle("/melissa-mike/assets/", http.StripPrefix("/melissa-mike/assets", http.FileServer(http.Dir("./Up-Trip/assets"))))
+	http.Handle("/melissa-mike/assets/", http.StripPrefix("/melissa-mike/assets", http.FileServer(http.Dir("/GoLang/src/github.com/mikes_personal_site_golang/Up-Trip/assets"))))
 	http.HandleFunc("/melissa-mike/", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "./Up-Trip/index.html")
+		http.ServeFile(w, r, "/GoLang/src/github.com/mikes_personal_site_golang/Up-Trip/index.html")
 	})
 }
 
 func homeRoute() {
-	http.Handle("/assets/", http.StripPrefix("/assets", http.FileServer(http.Dir("./Home/assets"))))
+	http.Handle("/assets/", http.StripPrefix("/assets", http.FileServer(http.Dir("/GoLang/src/github.com/mikes_personal_site_golang/Home/assets"))))
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "./Home/index.html")
+		http.ServeFile(w, r, "/GoLang/src/github.com/mikes_personal_site_golang/Home/index.html")
 	})
 }
